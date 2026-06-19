@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-onyx: #0B0B0A;
+  --color-onyx-soft: #15140F;
+  --color-onyx-line: #262420;
+
+  --color-ivory: #F2EDE4;
+  --color-ivory-dim: #E8E1D3;
+
+  --color-gold: #C9A24B;
+  --color-gold-bright: #E0BE71;
+  --color-gold-deep: #8A6A2F;
+
+  --color-burgundy: #5E1F25;
+  --color-burgundy-deep: #3D1218;
+
+  --color-ash: #6B6862;
+  --color-ash-light: #9C988F;
+
+  /* Font families */
+  --font-display: var(--font-fraunces), serif;
+  --font-body: var(--font-sora), sans-serif;
+
+  /* Letter spacing */
+  --tracking-widest2: 0.32em;
+
+  /* Background image */
+  --background-image-grain: url('/grain.png');
+
+  /* Max width */
+  --container-content: 1440px;
+
+  /* Transition timing function */
+  --ease-couture: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --header-h: 92px;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html,
+body {
+  background-color: var(--color-onyx);
+  color: var(--color-ivory);
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-onyx);
+}
+
+/* Thin scrollbar, gold on hover */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-onyx);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-onyx-line);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-deep);
+}
+
+/* Visible keyboard focus, brand-colored */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Seam-line: the signature recurring motif — a stitched double rule
+   echoing the brand's interlocking H monogram and the literal seam
+   of bespoke tailoring. */
+.seam {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold-deep) 12%,
+    var(--color-gold) 50%,
+    var(--color-gold-deep) 88%,
+    transparent 100%
+  );
+}
+
+.seam::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: -6px;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 6px,
+    rgba(201, 162, 75, 0.45) 6px,
+    rgba(201, 162, 75, 0.45) 9px
+  );
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.grain-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJuIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC45IiBudW1PY3RhdmVzPSIyIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIi8+PC9zdmc+");
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.container-x {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-x {
+    padding-inline: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-x {
+    padding-inline: 5rem;
+  }
+}
