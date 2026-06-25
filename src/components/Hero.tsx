@@ -2,14 +2,19 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { heroImage } from "../lib/content";
+import heroImg from "../assets/images/hero.svg";
+import heroImgMobile from "../assets/images/heromobile.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.15 + i * 0.12, duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    transition: {
+      delay: 0.15 + i * 0.12,
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    },
   }),
 };
 
@@ -19,24 +24,30 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[100svh] items-end overflow-hidden bg-onyx pt-[80px] md:pt-[92px]"
     >
-      {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src={heroImage}
+          src={heroImg}
           alt="A Helder Bespoke client in a tailored senator-cut native attire"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[60%_20%] opacity-[0.55]"
+          className="hidden md:block object-cover md:object-center object-[60%_20%] "
+        />
+        <Image
+          src={heroImgMobile}
+          alt="A Helder Bespoke client in a tailored senator-cut native attire"
+          fill
+          priority
+          sizes="100vw"
+          className="md:hidden object-cover object-[60%_20%] "
         />
         <div className="absolute inset-0 bg-gradient-to-t from-onyx via-onyx/40 to-onyx/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-onyx/80 via-transparent to-onyx/30" />
       </div>
 
-      {/* Oversized monogram watermark — echoes the brand mark as texture, not logo-spam */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.08 }}
+        animate={{ opacity: 0.1 }}
         transition={{ duration: 1.6, ease: "easeOut" }}
         className="pointer-events-none absolute -right-24 top-1/4 hidden w-[640px] md:block"
         aria-hidden="true"
@@ -52,7 +63,7 @@ export default function Hero() {
           // variants={fadeUp}
           className="eyebrow mb-6 text-gold"
         >
-          Lagos · Bespoke Atelier · Est. for the modern man
+          Bespoke Atelier · Est. for the modern man
         </motion.p>
 
         <motion.h1
@@ -74,9 +85,8 @@ export default function Hero() {
           // variants={fadeUp}
           className="mt-6 max-w-md text-balance font-body text-base text-ivory/75 md:text-lg"
         >
-          From the agbada that opens a ceremony to the three-piece that closes
-          a boardroom — Helder Bespoke cuts each piece by hand, to one
-          measure only: yours.
+          Helder Bespoke hand-cuts every piece to your exact measurements,
+          delivering a fit that is uniquely yours.
         </motion.p>
 
         <motion.div

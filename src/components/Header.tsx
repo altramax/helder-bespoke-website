@@ -31,7 +31,7 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-couture ${
-        scrolled
+        scrolled || open
           ? "bg-onyx/90 backdrop-blur-md border-b border-onyx-line"
           : "bg-gradient-to-b from-onyx/70 to-transparent border-b border-transparent"
       }`}
@@ -89,7 +89,7 @@ export default function Header() {
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden border-b border-onyx-line bg-onyx lg:hidden"
           >
-            <div className="container-x flex flex-col~ items-center gap-6 py-8">
+            <div className="container-x flex flex-col items-center gap-6 py-8">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}

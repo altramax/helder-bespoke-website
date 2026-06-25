@@ -2,77 +2,9 @@
 // Image sources: Unsplash (royalty-free), sized via the standard
 // images.unsplash.com query params for responsive delivery.
 
-export type Collection = {
-  id: string;
-  name: string;
-  tag: string;
-  description: string;
-  image: string;
-  price: string;
-};
 
-export const collections: Collection[] = [
-  {
-    id: "agbada-royale",
-    name: "Agbada Royale",
-    tag: "Native — Heritage",
-    description:
-      "The flagship flowing robe, hand-embroidered and cut full for ceremony and standing. Built on a structured inner kaftan so the drape holds all day.",
-    image:
-      "https://images.unsplash.com/photo-1622445275576-721325763afe?q=80&w=1400&auto=format&fit=crop",
-    price: "From ₦450,000",
-  },
-  {
-    id: "senator-fuse",
-    name: "Senator Fuse",
-    tag: "Native — Modern",
-    description:
-      "A close-cut senator silhouette finished with a contrast collar stitch. The everyday native, sharpened for the boardroom and the owambe alike.",
-    image:
-      "https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=1400&auto=format&fit=crop",
-    price: "From ₦185,000",
-  },
-  {
-    id: "savile-three-piece",
-    name: "The Savile Three-Piece",
-    tag: "International — Suiting",
-    description:
-      "A full-canvas three-piece built on a hand-padded chest roll. Half-lined for warm climates, fully structured through the shoulder.",
-    image:
-      "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=1400&auto=format&fit=crop",
-    price: "From ₦320,000",
-  },
-  {
-    id: "kaftan-noir",
-    name: "Kaftan Noir",
-    tag: "Native — Evening",
-    description:
-      "Minimal piping, maximal fabric. A slim kaftan in raw silk for evening occasions where restraint is its own statement.",
-    image:
-      "https://images.unsplash.com/photo-1633655442168-859d20c20517?q=80&w=1400&auto=format&fit=crop",
-    price: "From ₦210,000",
-  },
-  {
-    id: "double-breasted-lagos",
-    name: "Double-Breasted Lagos",
-    tag: "International — Suiting",
-    description:
-      "Six-button, peak lapel, built with extra room through the back for movement. Tropical wool, cut for the harmattan and the boardroom both.",
-    image:
-      "https://images.unsplash.com/photo-1593030103066-0093718efeb9?q=80&w=1400&auto=format&fit=crop",
-    price: "From ₦340,000",
-  },
-  {
-    id: "the-tie-bar",
-    name: "The Tie Bar",
-    tag: "Accessories",
-    description:
-      "Hand-rolled silk ties and pocket squares, woven exclusively for Helder in small batches. The final stitch on a finished look.",
-    image:
-      "https://images.unsplash.com/photo-1589756823695-278bc923f962?q=80&w=1400&auto=format&fit=crop",
-    price: "From ₦35,000",
-  },
-];
+
+
 
 export type ProcessStep = {
   id: string;
@@ -152,9 +84,6 @@ export const testimonials: Testimonial[] = [
       "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=400&auto=format&fit=crop",
   },
 ];
-
-export const heroImage =
-  "https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=2200&auto=format&fit=crop";
 
 export const craftImages = {
   fabric:

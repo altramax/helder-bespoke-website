@@ -1,8 +1,8 @@
 const facts = [
+  { value: "15", label: "Years cutting for Lagos and the diaspora" },
   { value: "26", label: "Measurements taken by hand, not six" },
   { value: "2", label: "Fittings minimum, before a seam is closed" },
-  { value: "11", label: "Years cutting for Lagos and the diaspora" },
-  { value: "48hrs", label: "Average reply time on a fabric enquiry" },
+  { value: "1hr", label: "Average reply time on a fabric enquiry" },
 ];
 
 export default function FactStrip() {

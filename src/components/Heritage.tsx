@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { aboutImage } from "../lib/content";
+import blackSuit from "../assets/images/black_suit.jpeg";
 
 export default function Heritage() {
   return (
@@ -14,15 +14,15 @@ export default function Heritage() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="relative col-span-1 lg:col-span-5"
+          className="relative col-span-1 lg:col-span-5 h-fit"
         >
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
             <Image
-              src={aboutImage}
+              src={blackSuit}
               alt="A bespoke agbada fabric being inspected in the Helder atelier"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover"
+              className="object-cover pb-6"
             />
           </div>
           <div className="absolute -bottom-6 -right-6 hidden h-32 w-32 border border-gold/40 md:block" />
